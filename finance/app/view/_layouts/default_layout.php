@@ -35,10 +35,6 @@
 <!-- Custom Styles-->
 <link href="<?php echo $_BASE_DIR; ?>css/custom-styles.css"
 	rel="stylesheet" />
-
-
-
-
 <link rel="stylesheet" href="<?php echo $_BASE_DIR; ?>css/index.css"><?php $this->_block('cssstart'); ?><?php $this->_endblock(); ?>
 <script type="text/javascript"
 	src="<?php echo $_BASE_DIR; ?>js/lib/jquery-3.1.1.min.js"></script>

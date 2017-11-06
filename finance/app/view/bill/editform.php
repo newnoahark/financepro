@@ -96,7 +96,8 @@
 							</div>
 							<div class="form-group">
 								<span>数量<input name="quantity" class="form-control"
-									placeholder="数量" style="display: inline; width: 13%;"></span> <span>入库数量<input
+									placeholder="数量" style="display: inline; width: 13%;"></span> <span>入库数量
+									<input
 									name="intoquantity" class="form-control" placeholder="入库数量"
 									style="display: inline; width: 13%;"></span> <span>出库数量<input
 									name="exitquantity" class="form-control" placeholder="出库数量"

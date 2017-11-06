@@ -8,7 +8,7 @@
 <div class="row">
 	<div class="col-md-12">
 		<h1 class="page-header">
-			Tables Page <small>Responsive tables</small>
+			日常数据 
 		</h1>
 	</div>
 </div>
@@ -18,7 +18,7 @@
 	<div class="col-md-12">
 		<!-- Advanced Tables  table table-striped table-bordered table-hover-->
 		<div class="panel panel-default">
-			<div class="panel-heading">Advanced Tables</div>
+			<div class="panel-heading">药单数据</div>
 			<div class="panel-body" style="border: 0;">
 				<div class="table-responsive">
 					<table  id="dataTables-example" data-toggle="table">
@@ -26,7 +26,7 @@
 							<tr>
 								<th  data-field="name1">name1</th>
 								<th  data-field="name2">name2</th>
-								<th  data-field="name3">name3</th>
+								<th  data-field="name3">name3</th>							
 							</tr>
 						</thead> 
 					</table>
@@ -40,9 +40,6 @@
 <!-- /. ROW  -->
 
 <!-- Metis Menu Js -->
-
-
-
 
 <script>
 
@@ -67,15 +64,11 @@
 	$.ajax({
 		url:'<?php echo url("bill/tablesenddate");?>',
 		success:function(data){
-			
-			console.log(Array(data));
-
-
 			//服务器传过来为字符串  需要将其转为json 再转为为数组对象Array(JSON.parse(data))
-			console.log(data);
+			
 			//var msg = data.split(",")
-			var msg1 = [{"name1":"1","name2":"2","name3":"3"}];
-			console.log(msg1);
+			//var msg1 = [{"name1":"1","name2":"2","name3":"3"}];
+
 			$('#dataTables-example').bootstrapTable("load",Array(JSON.parse(data)));
 		}
 	});

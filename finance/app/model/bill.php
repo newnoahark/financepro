@@ -46,7 +46,6 @@ class Bill extends QDB_ActiveRecord_Abstract
                  * 添加对象间的关联
                  */
                 # 'other' => array('has_one' => 'Class'),
-
             ),
 
             /**
