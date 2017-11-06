@@ -41,6 +41,7 @@
 
 <!-- Metis Menu Js -->
 
+
 <script>
 
 	$('#dataTables-example').bootstrapTable({
