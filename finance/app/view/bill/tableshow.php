@@ -64,14 +64,19 @@
 	    });
 	$.ajax({
 		url:'<?php echo url("bill/tablesenddate");?>',
-		success:function(data){
+		 success:function(data){
+		
 			//服务器传过来为字符串  需要将其转为json 再转为为数组对象Array(JSON.parse(data))
-			
-			//var msg = data.split(",")
-			//var msg1 = [{"name1":"1","name2":"2","name3":"3"}];
+			for (var x in data) {
+				$('#dataTables-example').bootstrapTable("append",Array(data[x]));
+				
+					
+			}	
 
-			$('#dataTables-example').bootstrapTable("load",Array(JSON.parse(data)));
-		}
+			//$('#dataTables-example').bootstrapTable("load",Array(JSON.parse(data)));
+			//$('#dataTables-example').bootstrapTable("load",Array(data));
+		},
+		dataType:'json'
 	});
 
 </script>
