@@ -10,6 +10,13 @@ $g_boot_time = microtime(true);
 
 $app_config = require(dirname(__FILE__) . '/../config/boot.php');
 
+//echo dirname(__FILE__) . '/../config/boot.php';
+
+// foreach ($app_config as $key => $value) {
+// 	echo $key."=>".$value."</br>";
+// 	# code...
+// }
+// return;
 
 
 require $app_config['QEEPHP_DIR'] . '/library/q.php';

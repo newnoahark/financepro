@@ -25,7 +25,7 @@ return array(
     /**
      * QeePHP 框架所在目录
      */
-    'QEEPHP_DIR'            => "D:/phpStudy/WWW/financepro/finance/qeephp",
+    'QEEPHP_DIR'            => dirname(__FILE__)."/../qeephp",
 
     /**
      * 应用程序的 ID，用于唯一标识一个应用程序
