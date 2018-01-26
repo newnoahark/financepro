@@ -20,11 +20,7 @@
 
 <link rel="stylesheet" type="text/css"
 	href="<?php echo $_BASE_DIR; ?>js/plugins/bootstrap/css/bootstrap-theme.css">
-
-
 	<!-- FontAwesome Styles-->
-
-
 <link rel="stylesheet" type="text/css"
 	href="http://www.jq22.com/jquery/font-awesome.4.6.0.css">
 	<!-- Morris Chart Styles-->

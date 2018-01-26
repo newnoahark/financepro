@@ -16,6 +16,7 @@ class Controller_Bill extends Controller_Abstract
 	function actionTableShow(){
 		
 	}
+	
 	function actionTableSendDate(){
 		//$this->_viewname = "tableshow";
 		//$this->_view['table'] = array("name1"=>"pcm","name2"=>"pcm","name3"=>"pcm");

@@ -31,7 +31,8 @@
 
 				</ul> <!-- /.dropdown-messages --></li>
 			<!-- /.dropdown -->
-			<li class="dropdown"><a class="dropdown-toggle"
+			<li class="dropdown">
+			<a class="dropdown-toggle"
 				data-toggle="dropdown" href="#" aria-expanded="false"> <i
 					class="fa fa-tasks fa-fw"></i> <i class="fa fa-caret-down"></i>
 			</a>
