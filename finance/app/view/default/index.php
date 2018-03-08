@@ -18,7 +18,7 @@
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="index.html"><i class="fa fa-comments"></i>
+			<a class="navbar-brand" href="<?php echo url("default/index");?>"><i class="fa fa-comments"></i>
 				<strong>MASTER </strong></a>
 		</div>
 
