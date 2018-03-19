@@ -36,10 +36,23 @@
 	src="<?php echo $_BASE_DIR; ?>js/lib/jquery-3.1.1.min.js"></script>
 <script type="text/javascript"
 	src="<?php echo $_BASE_DIR; ?>js/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript"
+	src="<?php echo $_BASE_DIR; ?>js/plugins/bootstrap-table/dist/extensions/export/bootstrap-table-export.js"></script>
+
+
 <script type="text/javascript"
 	src="<?php echo $_BASE_DIR; ?>js/plugins/jquery-easyui-1.4.4/jquery.easyui.min.js"></script>
 <script type="text/javascript"
 	src="<?php echo $_BASE_DIR; ?>js/plugins/jquery-easyui-1.4.4/locale/easyui-lang-zh_CN.js"></script>
+
+
+<script type="text/javascript" 
+src="<?php echo $_BASE_DIR; ?>js/plugins/tableExport/libs/FileSaver/FileSaver.min.js"></script>
+<script type="text/javascript" src="<?php echo $_BASE_DIR; ?>js/plugins/tableExport/libs/jsPDF/jspdf.min.js"></script>
+<script type="text/javascript" 
+src="<?php echo $_BASE_DIR; ?>js/plugins/tableExport/libs/jsPDF-AutoTable/jspdf.plugin.autotable.js"></script>
+<script type="text/javascript" src="<?php echo $_BASE_DIR; ?>js/plugins/tableExport/tableExport.js"></script>
 
 </head>
 <body>

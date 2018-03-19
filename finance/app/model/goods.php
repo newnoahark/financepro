@@ -2,9 +2,9 @@
 // $Id$
 
 /**
- * Bill 封装来自 bill 数据表的记录及领域逻辑
+ * Goods 封装来自 goods 数据表的记录及领域逻辑
  */
-class Bill extends QDB_ActiveRecord_Abstract
+class Goods extends QDB_ActiveRecord_Abstract
 {
 
     /**
@@ -28,14 +28,14 @@ class Bill extends QDB_ActiveRecord_Abstract
             ),
 
             // 用什么数据表保存对象
-            'table_name' => 'bill',
+            'table_name' => 'goods',
 
             // 指定数据表记录字段与对象属性之间的映射关系
             // 没有在此处指定的属性，QeePHP 会自动设置将属性映射为对象的可读写属性
             'props' => array
             (
                 // 主键应该是只读，确保领域对象的“不变量”
-                'id' => array('readonly' => true),
+                'goodsid' => array('readonly' => true),
 
                 /**
                  *  可以在此添加其他属性的设置
@@ -46,6 +46,7 @@ class Bill extends QDB_ActiveRecord_Abstract
                  * 添加对象间的关联
                  */
                 # 'other' => array('has_one' => 'Class'),
+
             ),
 
             /**
@@ -58,7 +59,7 @@ class Bill extends QDB_ActiveRecord_Abstract
             /**
              * 拒绝使用 mass-assignment 方式赋值的属性
              */
-            'attr_protected' => 'id',
+            'attr_protected' => 'goodsid',
 
             /**
              * 指定在数据库中创建对象时，哪些属性的值不允许由外部提供
@@ -114,105 +115,28 @@ class Bill extends QDB_ActiveRecord_Abstract
              */
             'validations' => array
             (
-                'drug_id' => array
+                'goodsname' => array
                 (
-                    array('max_length', 255, '药品ID不能超过 255 个字符'),
+                    array('not_empty', 'goodsname不能为空'),
+                    array('max_length', 20, 'goodsname不能超过 20 个字符'),
 
                 ),
 
-                'bill' => array
+                'goodsprice' => array
                 (
-                    array('is_int', '单据日期必须是一个整数'),
+                    array('is_int', 'goodsprice必须是一个整数'),
 
                 ),
 
-                'billnumber' => array
+                'goodsamount' => array
                 (
-                    array('max_length', 255, '单据编号不能超过 255 个字符'),
+                    array('is_int', 'goodsamount必须是一个整数'),
 
                 ),
 
-                'billtype' => array
+                'goodsmoney' => array
                 (
-                    array('max_length', 255, '单据类型不能超过 255 个字符'),
-
-                ),
-
-                'location' => array
-                (
-                    array('max_length', 255, '货位不能超过 255 个字符'),
-
-                ),
-
-                'unit' => array
-                (
-                    array('max_length', 255, '单位不能超过 255 个字符'),
-
-                ),
-
-                'quantity' => array
-                (
-                    array('is_int', '数量必须是一个整数'),
-
-                ),
-
-                'intoquantity' => array
-                (
-                    array('is_int', '入库数量必须是一个整数'),
-
-                ),
-
-                'exitquantity' => array
-                (
-                    array('is_int', '出库数量必须是一个整数'),
-
-                ),
-
-                'cost' => array
-                (
-                    array('is_int', '成本必须是一个整数'),
-
-                ),
-
-                'costamount' => array
-                (
-                    array('is_int', '成本金额必须是一个整数'),
-
-                ),
-
-                'price' => array
-                (
-                    array('is_int', '单价必须是一个整数'),
-
-                ),
-
-                'amount' => array
-                (
-                    array('is_int', '金额必须是一个整数'),
-
-                ),
-
-                'grossprofit' => array
-                (
-                    array('is_int', '毛利必须是一个整数'),
-
-                ),
-
-                'tradeunit' => array
-                (
-                    array('max_length', 255, '往来单位不能超过 255 个字符'),
-
-                ),
-
-                'handleperson' => array
-                (
-                    array('max_length', 255, '经手人不能超过 255 个字符'),
-
-                ),
-
-                'singler' => array
-                (
-                    array('max_length', 255, '制单人不能超过 255 个字符'),
+                    array('is_int', 'goodsmoney必须是一个整数'),
 
                 ),
 

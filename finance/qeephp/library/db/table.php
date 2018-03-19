@@ -201,10 +201,12 @@ class QDB_Table
             {
                 // 如果只有一个主键字段，并且主键字段不是自增，则通过 nextID() 获得一个主键值
                 $pk = $this->_pk[0];
+
                 if (empty($row[$pk]))
                 {
                     unset($row[$pk]);
-                    if (! self::$_meta[$this->_cache_id][$pk]['auto_incr'])
+
+					if (! self::$_meta[$this->_cache_id][$pk]['auto_incr'])
                     {
                         $row[$pk] = $this->nextID($pk);
                         $insert_id[$pk] = $row[$pk];

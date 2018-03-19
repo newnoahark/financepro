@@ -71,11 +71,8 @@
 
 				<li><a id="tableshow" href="#"><i class="fa fa-table"></i>日常数据</a></li>
 				<li><a id="billfillin" href="#"><i class="fa fa-edit"></i>单据填写</a></li>
-
 			</ul>
-
 		</div>
-
 	</nav>
 	<!-- /. NAV SIDE  -->
 	<div id="page-wrapper" style="border: 0; with: 100%; padding: 20px;">
@@ -88,6 +85,22 @@
 
 <?php $this->_block('jsend'); ?>
 <script type="text/javascript">
+
+//判断是否为数字函数
+function isNumber(val){
+    var regPos = /^\d+(\.\d+)?$/; //非负浮点数
+    var regNeg = /^(-(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*)))$/; //负浮点数
+    if(regPos.test(val) || regNeg.test(val)){
+        return true;
+    }else{
+        return false;
+    }
+
+}
+
+
+
+//切换标签页
 $(function(){
 	$("#page-inner").panel({
 		href:'<?php echo url("bill/desktop");?>',
@@ -111,33 +124,50 @@ $(function(){
 		
 		
 	});
-
+//提交表单
 $(document).on("click","#submit-button",function(){
 
-	if($("#drug-name").val()==""){
+	if($("#goods-name").val()==""){
 		$.messager.alert('温馨提示','请填写商品名称','warning',function(){
-			$('#memo').focus();
-			$('#memo').select();
+			$('#goods-name').focus();
+			//$('#drug-name').select();
 		});
 		return;
 	}
+	if($("#goods-price").val()==""){
+		$.messager.alert('温馨提示','请填写商品价格','warning',function(){
+			$('#goods-price').focus();
+			//$('#drug-name').select();
+		});
+		return;
+	}
+
+	if(!isNumber($("#goods-price").val())){
+		$.messager.alert('温馨提示','商品价格应为数字','warning',function(){
+			$('#goods-name').focus();
+			//$('#drug-name').select();
+		});
+		return;
+	}
+
+
+
 	var param=$("#bill-form").serializeArray();
-	console.log(param);
-	var url = "<?php echo url("bill/savedata");?>";
+
+	var url = "<?php echo url("bill/savedata");?>";	
 	$.post(url,param,function(data){
 		if(data.status){
 			$.messager.show({
 				title: '提示',
 				msg: '操作成功!',
-				timeout:2000,
-				showType:'fade',
 				style: {
 					right:'',
 					bottom:''
 				}
 			});	
-			//$.messager.alert('温馨提示',"成功",'success');
-			window.location.reload();
+			
+			$("#bill-form")[0].reset();
+			//window.location.reload();
 		}else{
 			$.messager.alert('温馨提示',data.message,'warning');
 		}

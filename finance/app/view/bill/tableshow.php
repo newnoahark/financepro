@@ -24,9 +24,10 @@
 					<table  id="dataTables-example" data-toggle="table">
 						<thead>
 							<tr>
-								<th  data-field="name1">name1</th>
-								<th  data-field="name2">name2</th>
-								<th  data-field="name3">name3</th>							
+								<th  data-field="goods_name">名称</th>
+								<th  data-field="goods_price">单价</th>
+								<th  data-field="goods_amount">数量</th>
+								<th  data-field="goods_money">金额</th>							
 							</tr>
 						</thead> 
 					</table>
@@ -58,8 +59,11 @@
 	    showRefresh : true,
 	    pagination: true,//分页
 	    pageNumber : 1,
-	    pageList: [5, 10, 20, 50],//分页步进值
+	    pageList: [5, 10, 15, 20],//分页步进值
 	    search: true,//显示搜索框
+	    showExport: true,
+	    exportDataType: 'all',
+        exportTypes:[ 'csv', 'txt', 'sql', 'doc', 'excel', 'xlsx', 'pdf']
 
 	    });
 	$.ajax({
